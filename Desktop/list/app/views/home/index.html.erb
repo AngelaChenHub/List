@@ -1,19 +1,22 @@
-<div class='container'>
-	<h1>Biggs | Chen List of Items</h1>
-</div>
-
-<div class='container'>
-	<%= form_for @task, :remote => true, :format => :json do |f| %>
-	<div class='control-group'>
-		<%= f.label :title %>
-		<%= f.text_field :title, :class => 'form-control' %>
-	</div>
-
-	<%= f.submit 'Add Task', :class => 'btn btn-success' %>
-	<% end %>
-</div>
-
+<h1 class="container">Two Degrees</h1>
 <div class="container">
-	<h1>To Do List</h1>
-<div id="tasks"></div>
+	<%= form_for @task, :remote => true, :format => :json do |f| %>
+	<div class="control-group">
+
+		<%= f.label :Name %>
+		<%= f.text_field :title , :class => 'form-control' %>
+		<%= f.label :Email_address %>
+		<%= f.text_field :email_address, :class => 'form-control' %>
+		<%= f.label :Description %>
+		<%= f.text_field :description, :class => 'form-control', :size => 150 %>
+	</div>
+</br>
+<%= f.submit 'Add Contact', :class => "btn btn-success"  %>
+<% end %>
+</div>
+</br>
+<div class="container">
+	<div class="form-body">
+		<div id="tasks"></div>
+	</div>
 </div>

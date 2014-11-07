@@ -15,6 +15,18 @@
 //= require bootstrap
 //= require_tree .
 
+var loadTasks = function () {
+	$.ajax({
+		url : '/tasks/'
+	}).done(function(data){
+		$('#tasks').html(data);
+		addEventListeners();
+	});
+};
+
+$(document).ready(function () {
+	loadTasks();
+});
 
 $(document).ready(function () {
 	$("form.new_task").bind("ajax:success", function (event, xhr, settings) {
@@ -23,11 +35,22 @@ $(document).ready(function () {
 	});
 });
 
-var loadTasks = function () {
+var selectTask = function (_id) {
 	$.ajax({
-		url : '/tasks/'
-	}).done(function(data){
-		$('#tasks').html(data);
+		url : '/tasks/archive/' + _id,
+		method : 'post'
+	}).done(function (data) {
+		loadTasks();
+		addEventListeners();
+		console.log(data);
 	});
 };
+
+var addEventListeners = function () {
+	$('.select').on('click',function(e){
+		selectTask($(this).data('id'));
+	});
+};
+
+
 
