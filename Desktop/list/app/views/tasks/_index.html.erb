@@ -1,0 +1,16 @@
+<%if @tasks.any? %>
+  <% @tasks.each do |task|%>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <h1><%=task.title %></h1>
+      </div>
+      <div class="col-sm-2">
+          <button class="btn btn-info archive" data-id="<%=task.id%>"> Archive </button>
+      </div>
+      <div class="col-sm-2">
+        <h1><%= task.description %></h1>
+      </div>
+    </div>
+    <% end %>
+  <%end %>

@@ -1,0 +1,23 @@
+header{
+	background:darkblue;
+	color:white;
+	border: double;
+	padding-left: 10px;
+}
+p{
+	color:green;
+	margin-left: 20px;
+	padding-left: 30px;
+}
+h1{
+	padding-left: 40px;
+}
+h2{	
+	padding-left: 40px;
+}
+a{
+	font-size: 40px;
+}
+section img{
+	padding-top: 0px;
+}
